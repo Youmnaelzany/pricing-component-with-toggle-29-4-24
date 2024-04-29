@@ -1,10 +1,121 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "@/styles/globals.css";
+import { Switch } from "@/components/ui/switch";
 ---
 
 <Layout title="Frontend Mentor | [Pricing component with toggle]">
-  <main></main>
+  <main>
+    <!-- Our Pricing Annually & Monthly Switcher -->
+    <section
+      class="mt-16 flex flex-col items-center gap-10 text-center xl:mt-[4.44rem]"
+    >
+      <h1 class="text-[2rem] font-bold leading-normal text-[#6E728E]">
+        Our Pricing
+      </h1>
+      <div class="flex items-center gap-6">
+        <h2 class="text-[0.9375rem] font-bold leading-[1.75rem] text-[#6E728E]">
+          Annually
+        </h2>
+        <Switch />
+
+        <h2 class="text-[0.9375rem] font-bold leading-[1.75rem] text-[#6E728E]">
+          Monthly
+        </h2>
+      </div>
+    </section>
+    <!-- Annually -->
+    <section
+      class="mx-6 mt-20 flex flex-col gap-[2.03rem] xl:mx-[12.19rem] xl:mt-[4.03rem] xl:gap-0"
+      id="annually"
+    >
+      <!-- Basic Price -->
+      <div
+        class="priceBox flex h-[28.3125rem] w-[20.4375rem] flex-col items-center gap-8 rounded-[0.625rem] bg-[#fff] px-[1.81rem] py-[1.94rem] text-center"
+      >
+        <div class="mb-[0.81rem] flex flex-col gap-6">
+          <h2 class="text-lg font-bold leading-7 text-[#6E728E]">Basic</h2>
+          <h3
+            class="text-[4.5rem] font-bold leading-[4.5rem] tracking-[-0.135rem] text-[#4A4D60]"
+          >
+            &dollar;199.99
+          </h3>
+        </div>
+        <div class="flex flex-col gap-[1.56rem]">
+          <h4
+            class="relative text-[0.9375rem] font-bold leading-7 text-[#6E728E] before:absolute before:-top-3 before:left-[-4.688rem] before:h-[0.0625rem] before:w-[16.8125rem] before:bg-[#6E728E] before:opacity-25
+			after:absolute after:-bottom-3 after:left-[-4.688rem] after:h-[0.0625rem] after:w-[16.8125rem] after:bg-[#6E728E] after:opacity-25"
+          >
+            500 GB Storage
+          </h4>
+          <h4
+            class="relative text-[0.9375rem] font-bold leading-7 text-[#6E728E] after:absolute after:-bottom-3 after:left-[-4.688rem] after:h-[0.0625rem] after:w-[16.8125rem] after:bg-[#6E728E] after:opacity-25"
+          >
+            2 Users Allowed
+          </h4>
+          <h4
+            class="relative text-[0.9375rem] font-bold leading-7 text-[#6E728E] after:absolute after:-bottom-3 after:left-[-4.688rem] after:h-[0.0625rem] after:w-[16.8125rem] after:bg-[#6E728E] after:opacity-25"
+          >
+            Send up to 3 GB
+          </h4>
+        </div>
+        <div class="">
+          <button
+            type="button"
+            class="btn h-[2.75rem] w-[16.8125rem] rounded-[0.375rem] text-sm font-bold tracking-[0.08706rem] text-[#fff]"
+          >
+            LEARN MORE
+          </button>
+        </div>
+      </div>
+      <!-- Professional Price -->
+      <div
+        class="priceBox btn flex h-[28.3125rem] w-[20.4375rem] flex-col items-center gap-8 rounded-[0.625rem] px-[1.81rem] py-[1.94rem] text-center"
+      >
+        <div class="mb-[0.81rem] flex flex-col gap-6">
+          <h2 class="text-lg font-bold leading-7 text-[#fff]">Professional</h2>
+          <h3
+            class="text-[4.5rem] font-bold leading-[4.5rem] tracking-[-0.135rem] text-[#fff]"
+          >
+            &dollar;249.99
+          </h3>
+        </div>
+        <div class="flex flex-col gap-[1.56rem]">
+          <h4
+            class="relative text-[0.9375rem] font-bold leading-7 text-[#fff] before:absolute before:-top-3 before:left-[-4.688rem] before:h-[0.0625rem] before:w-[16.8125rem] before:bg-[#fff] before:opacity-25
+		  after:absolute after:-bottom-3 after:left-[-4.688rem] after:h-[0.0625rem] after:w-[16.8125rem] after:bg-[#fff] after:opacity-25"
+          >
+            1 TB Storage
+          </h4>
+          <h4
+            class="relative text-[0.9375rem] font-bold leading-7 text-[#fff] after:absolute after:-bottom-3 after:left-[-4.688rem] after:h-[0.0625rem] after:w-[16.8125rem] after:bg-[#fff] after:opacity-25"
+          >
+            5 Users Allowed
+          </h4>
+          <h4
+            class="relative text-[0.9375rem] font-bold leading-7 text-[#fff] after:absolute after:-bottom-3 after:left-[-4.688rem] after:h-[0.0625rem] after:w-[16.8125rem] after:bg-[#fff] after:opacity-25"
+          >
+            Send up to 3 GB
+          </h4>
+        </div>
+        <div class="">
+          <button
+            type="button"
+            class="h-[2.75rem] w-[16.8125rem] rounded-[0.375rem] bg-[#fff] text-sm font-bold tracking-[0.08706rem] text-[#6D72DE]"
+          >
+            LEARN MORE
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
 
-<style></style>
+<style>
+  .priceBox {
+    box-shadow: 0px 20px 40px 0px rgba(212, 210, 244, 0.5);
+  }
+  .btn {
+    background: linear-gradient(135deg, #a2a7f0, #696edd);
+  }
+</style>
