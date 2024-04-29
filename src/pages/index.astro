@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "@/styles/globals.css";
-import { Switch } from "@/components/ui/switch";
 ---
 
 <Layout title="Frontend Mentor | [Pricing component with toggle]">
@@ -17,8 +16,16 @@ import { Switch } from "@/components/ui/switch";
         <h2 class="text-[0.9375rem] font-bold leading-[1.75rem] text-[#6E728E]">
           Annually
         </h2>
-        <Switch />
-
+        <div class="checkBox relative h-8 w-14 rounded-2xl bg-[#8b8fe8]">
+          <label class="toggleBox cursor-pointer">
+            <input type="checkbox" class="hidden" id="checkboxBtn" />
+            <div
+              class="circle absolute left-[4px] top-[1px] h-7 w-7 rounded-full bg-[#fff] transition-all duration-500 ease-linear"
+              id="circleBtn"
+            >
+            </div>
+          </label>
+        </div>
         <h2 class="text-[0.9375rem] font-bold leading-[1.75rem] text-[#6E728E]">
           Monthly
         </h2>
@@ -28,7 +35,6 @@ import { Switch } from "@/components/ui/switch";
     <section
       id="annually"
       class="mx-6 mb-[4.44rem] mt-20 flex flex-col gap-[2.03rem] xl:mx-[12.19rem] xl:mb-[6.47rem] xl:mt-[4.03rem] xl:flex-row xl:gap-0"
-      id="annually"
     >
       <!-- Basic Price -->
       <div
@@ -151,8 +157,7 @@ import { Switch } from "@/components/ui/switch";
     <!-- Monthly Price -->
     <section
       id="monthly"
-      class="mx-6 mb-[4.44rem] mt-20 flex flex-col gap-[2.03rem] xl:mx-[12.19rem] xl:mb-[6.47rem] xl:mt-[4.03rem] xl:flex-row xl:gap-0"
-      id="annually"
+      class="mx-6 mb-[4.44rem] mt-20 hidden flex-col gap-[2.03rem] xl:mx-[12.19rem] xl:mb-[6.47rem] xl:mt-[4.03rem] xl:flex-row xl:gap-0"
     >
       <!-- Basic Price -->
       <div
@@ -299,3 +304,21 @@ import { Switch } from "@/components/ui/switch";
     border-radius: 0rem 0.625rem 0.625rem 0rem;
   }
 </style>
+
+<script is:inline>
+  const checkboxBtn = document.getElementById("checkboxBtn");
+  const annually = document.getElementById("annually");
+  const monthly = document.getElementById("monthly");
+  const circleBtn = document.getElementById("circleBtn");
+  checkboxBtn.addEventListener("click", function () {
+    if (checkboxBtn.checked) {
+      annually.style.display = "flex";
+      monthly.style.display = "none";
+      circleBtn.style.left = "4px";
+    } else {
+      annually.style.display = "none";
+      monthly.style.display = "flex";
+      circleBtn.style.left = "25px";
+    }
+  });
+</script>
