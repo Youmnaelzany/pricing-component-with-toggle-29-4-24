@@ -17,7 +17,7 @@ This is a solution to the [Pricing component with toggle challenge on Frontend M
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Add solution URL here](https://github.com/Youmnaelzany/pricing-component-with-toggle-29-4-24.git)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
